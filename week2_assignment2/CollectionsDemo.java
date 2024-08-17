@@ -3,6 +3,9 @@ import java.util.*;
 public class CollectionsDemo {
     
     public static void ListDemo(Scanner sc) {
+
+        //List are used when we need to maintain ordered collection.
+        // Example - List of Students or shopping cart.
         List<Integer> list = new ArrayList<>();
         
         
@@ -12,7 +15,7 @@ public class CollectionsDemo {
             System.out.println("1. Add element");
             System.out.println("2. Remove element");
             System.out.println("3. Search element");
-            System.out.println("4.View List Elements");
+            System.out.println("4.View List elements");
             System.out.println("0. Exit");
             choice = sc.nextInt();
             sc.nextLine();
@@ -61,6 +64,9 @@ public class CollectionsDemo {
     
     
     public static void SetDemo(Scanner sc) {
+
+        //Sets are used to store unique unordered items.It doesn't Allow Duplicates.
+        //Storing Course ID's is an example.
         Set<String> set = new HashSet<>();
        
         
@@ -70,6 +76,7 @@ public class CollectionsDemo {
             System.out.println("1. Add element");
             System.out.println("2. Remove element");
             System.out.println("3. Search element");
+            System.out.println("4. View Set elements");
             System.out.println("0. Exit");
             choice = sc.nextInt();
             sc.nextLine(); 
@@ -96,6 +103,13 @@ public class CollectionsDemo {
                         System.out.println("Element not found");
                     }
                     break;
+
+                case 4:
+                    System.out.print("SET ELEMENTS ARE(Doesnt contain duplicates even if entered again):");
+                    for(String c:set)
+                    {
+                        System.out.print(c+" ");
+                    }
                     
                 case 0:
                     System.out.println("Exiting Set operations...");
@@ -110,6 +124,9 @@ public class CollectionsDemo {
 
   
     public static void MapDemo(Scanner sc) {
+
+        // Maps are used to store Key Value pairs.Searching is easy in maps using the key.
+        //Example-Student id linked with thier names.
         Map<Integer, String> map = new HashMap<>();
        
         
