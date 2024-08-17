@@ -23,22 +23,21 @@ public class CollectionsDemo {
             switch(choice) {
                 case 1:
                     System.out.print("Enter element to add: ");
-                    int elementToAdd = sc.nextInt();
-                    list.add(elementToAdd);
-                    System.out.println("Added: " + elementToAdd);
+                    int ele = sc.nextInt();
+                    list.add(ele);
                     break;
                     
                 case 2:
                     System.out.print("Enter element to remove: ");
-                    int elementToRemove = sc.nextInt();
-                    list.remove(elementToRemove);
+                    int eler = sc.nextInt();
+                    list.remove(Integer.valueOf(eler));
                     break;
                     
                 case 3:
                     System.out.print("Enter element to search: ");
-                    int elementToSearch = sc.nextInt();
-                    if (list.contains(elementToSearch)) {
-                        System.out.println("Element found: " + elementToSearch);
+                    int eles = sc.nextInt();
+                    if (list.contains(eles)) {
+                        System.out.println("Element found: " + eles);
                     } else {
                         System.out.println("Element not found");
                     }
@@ -143,11 +142,11 @@ public class CollectionsDemo {
             switch(choice) {
                 case 1:
                     System.out.print("Enter key (integer): ");
-                    int keyToAdd = sc.nextInt();
+                    int key = sc.nextInt();
                     sc.nextLine(); 
                     System.out.print("Enter value: ");
-                    String valueToAdd = sc.nextLine();
-                    map.put(keyToAdd, valueToAdd);
+                    String value = sc.nextLine();
+                    map.put(key, value);
                     break;
                     
                 case 2:
