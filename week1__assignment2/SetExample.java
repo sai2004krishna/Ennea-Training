@@ -8,16 +8,16 @@ public class SetExample {
         set = new HashSet<>();
     }
 
-    public boolean addElement(String ele) {
-        return set.add(ele);
+    public boolean addElement(String element) {
+        return set.add(element);
     }
 
-    public boolean removeElement(String ele) {
-        return set.remove(ele);
+    public boolean removeElement(String element) {
+        return set.remove(element);
     }
 
-    public boolean searchElement(String ele) {
-        return set.contains(ele);
+    public boolean searchElement(String element) {
+        return set.contains(element);
     }
 
     public Set<String> getSet() {

@@ -7,16 +7,16 @@ public class ListExample {
         list = new ArrayList<>();
     }
 
-    public void addElement(String ele) {
-        list.add(ele);
+    public void addElement(String element) {
+        list.add(element);
     }
 
-    public boolean removeElement(String ele) {
-        return list.remove(ele);
+    public boolean removeElement(String element) {
+        return list.remove(element);
     }
 
-    public boolean searchElement(String ele) {
-        return list.contains(ele);
+    public boolean searchElement(String element) {
+        return list.contains(element);
     }
 
     public List<String> getList() {

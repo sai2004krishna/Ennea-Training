@@ -8,20 +8,20 @@ public class MapExample {
         map = new HashMap<>();
     }
 
-    public void addElement(int k, String v) {
-        map.put(k, v);
+    public void addElement(int key, String value) {
+        map.put(key, value);
     }
 
-    public String removeElement(int k) {
-        return map.remove(k);
+    public String removeElement(int key) {
+        return map.remove(key);
     }
 
-    public boolean searchKey(int k) {
-        return map.containsKey(k);
+    public boolean searchKey(int key) {
+        return map.containsKey(key);
     }
 
-    public boolean searchValue(String v) {
-        return map.containsValue(v);
+    public boolean searchValue(String value) {
+        return map.containsValue(value);
     }
 
     public Map<Integer, String> getMap() {
