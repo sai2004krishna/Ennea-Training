@@ -82,9 +82,9 @@ function displayNewsData(data) {
     for (let i = 0; i < topArticles.length; i++) {
         const article = topArticles[i];
         html += `
-            <div>
+            <div class="news-container">
                 <h3>${article.title}</h3>
-                <p>${article.description}</p>
+                <p>${article.author}</p>
             </div>
         `;
     }

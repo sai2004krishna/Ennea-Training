@@ -46,14 +46,24 @@ h1, h2 {
     margin-top: 20px;
 }
 
-#crypto-data, #weather-data, #news-data {
+#crypto-data, #weather-data {
+    background-color: white;
+    border: 2px solid burlywood;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: justify;
+    
+    width: 50%;
+}
+
+#news-data {
     background-color: white;
     border: 2px solid burlywood;
     padding: 10px;
     border-radius: 5px;
     text-align: justify;
     margin: auto;
-    width: 50%;
+    width: 90%;
 }
 
 
@@ -71,3 +81,10 @@ select{
 }
 
 
+.news-container{
+    border: 3px solid #a98440;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 20px;
+
+}
