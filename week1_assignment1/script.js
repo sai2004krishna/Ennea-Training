@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchCryptoData(); 
     }
     if (document.getElementById('weather-data')) {
-        document.getElementById('SelectCity').addEventListener('onClick', fetchWeatherData);
+        document.getElementById('city-select').addEventListener('change', fetchWeatherData);
         fetchWeatherData(); 
     }
     if (document.getElementById('news-data')) {
@@ -28,7 +28,7 @@ async function fetchCryptoData() {
 }
 
 async function fetchWeatherData() {
-    const apiKey = '';
+    const apiKey = 'a2f02ec8835afaf19e04e8015d97a590';
     const city = document.getElementById('city-select').value;
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
@@ -43,7 +43,7 @@ async function fetchWeatherData() {
 }
 
 async function fetchNewsData() {
-    const apiKey = 'your_newsapi_api_key';
+    const apiKey = '9888c8541ae04437ad10cc67a3a766f7';
     const country = document.getElementById('country-select').value;
     try {
         const response = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apiKey}`);
@@ -59,7 +59,7 @@ async function fetchNewsData() {
 
 function displayCryptoData(data, crypto) {
     document.getElementById('crypto-data').innerHTML = `
-        <p>${crypto.charAt(0).toUpperCase() + crypto.slice(1)} (USD): $${data[crypto].usd}</p>
+        <p>${crypto} (USD): $ ${data[crypto].usd}</p>
     `;
 }
 
@@ -72,10 +72,22 @@ function displayWeatherData(data) {
 }
 
 function displayNewsData(data) {
-    const newsData = data.articles.slice(0, 5).map(article => `
-        <p><strong>${article.title}</strong><br>${article.description}</p>
-    `).join('');
-    document.getElementById('news-data').innerHTML = newsData;
+    const topArticles = data.articles.slice(0, 5);
+    
+    
+    let htmlForArticles = '';
+    for (let i = 0; i < topArticles.length; i++) {
+        const article = topArticles[i];
+        htmlForArticles += `
+            <div>
+                <h3>${article.title}</h3>
+                <p>${article.description}</p>
+            </div>
+        `;
+    }
+    
+    
+    document.getElementById('news-data').innerHTML = htmlForArticles;
 }
 
 function handleError(elementId, error) {
