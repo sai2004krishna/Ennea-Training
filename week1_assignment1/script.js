@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('crypto-data')) {
         document.getElementById('crypto-select').addEventListener('change', fetchCryptoData);
@@ -23,7 +26,7 @@ async function fetchCryptoData() {
         const data = await response.json();
         displayCryptoData(data, crypto);
     } catch (error) {
-        handleError('crypto-data', error);
+        document.getElementById('crypto-data').innerText = `Error: ${error.message}`;
     }
 }
 
@@ -38,12 +41,12 @@ async function fetchWeatherData() {
         const data = await response.json();
         displayWeatherData(data);
     } catch (error) {
-        handleError('weather-data', error);
+        document.getElementById('weather-data').innerText = `Error: ${error.message}`;
     }
 }
 
 async function fetchNewsData() {
-    const apiKey = '9888c8541ae04437ad10cc67a3a766f7';
+    const apiKey = '9888c8541ae04437ad10cc67a3a766f7'
     const country = document.getElementById('country-select').value;
     try {
         const response = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apiKey}`);
@@ -53,7 +56,7 @@ async function fetchNewsData() {
         const data = await response.json();
         displayNewsData(data);
     } catch (error) {
-        handleError('news-data', error);
+        document.getElementById('news-data').innerText = `Error: ${error.message}`;
     }
 }
 
@@ -75,10 +78,10 @@ function displayNewsData(data) {
     const topArticles = data.articles.slice(0, 5);
     
     
-    let htmlForArticles = '';
+    let html = '';
     for (let i = 0; i < topArticles.length; i++) {
         const article = topArticles[i];
-        htmlForArticles += `
+        html += `
             <div>
                 <h3>${article.title}</h3>
                 <p>${article.description}</p>
@@ -87,9 +90,6 @@ function displayNewsData(data) {
     }
     
     
-    document.getElementById('news-data').innerHTML = htmlForArticles;
+    document.getElementById('news-data').innerHTML = html;
 }
 
-function handleError(elementId, error) {
-    document.getElementById(elementId).innerText = `Error: ${error.message}`;
-}
